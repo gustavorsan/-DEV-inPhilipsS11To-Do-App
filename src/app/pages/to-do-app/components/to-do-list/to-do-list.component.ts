@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Task } from '../../model/task.model';
 
 @Component({
   selector: 'tdapp-to-do-list',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent {
-
+  @Input() tasks:Task[] = [];
 }
