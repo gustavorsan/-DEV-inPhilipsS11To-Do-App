@@ -8,8 +8,15 @@
             <tdapp-input
               (newTask)="addTask($event)"
             ></tdapp-input>
-           <tdapp-nav></tdapp-nav>
-           <tdapp-to-do-list [tasks]="tasks"></tdapp-to-do-list>
+            <div *ngIf="tasks.length > 0 else  msg">
+              <tdapp-nav></tdapp-nav>
+              <tdapp-to-do-list [tasks]="tasks"></tdapp-to-do-list>
+            </div>
+            <ng-template #msg>
+              <div class="alert alert-primary" role="alert" >
+                Você não possui tarefas
+              </div>
+            </ng-template>
           </div>
         </div>
 
