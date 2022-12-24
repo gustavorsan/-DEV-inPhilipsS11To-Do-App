@@ -9,6 +9,7 @@ import { InputComponent } from './pages/to-do-app/components/input/input.compone
 import { NavComponent } from './pages/to-do-app/components/nav/nav.component';
 import { TaskComponent } from './pages/to-do-app/components/task/task.component';
 import { ToDoListComponent } from './pages/to-do-app/components/to-do-list/to-do-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ToDoListComponent } from './pages/to-do-app/components/to-do-list/to-do
     ToDoListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

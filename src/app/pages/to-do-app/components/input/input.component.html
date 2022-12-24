@@ -1,7 +1,16 @@
 <form class="d-flex justify-content-center align-items-center mb-4">
   <div class="form-outline flex-fill">
-    <input type="text" id="form2" class="form-control" placeholder="new task"/>
+    <input 
+      type="text" 
+      id="form2" 
+      class="form-control" 
+      placeholder="new task"
+      [(ngModel)]="taskDescription"
+      name="taskDescription"
+    />
   </div>
-  <button type="submit" class="btn btn-info ms-2 ">Add</button>
+  <button type="submit" class="btn btn-primary ms-2 " (click)="handleAddClick($event)">Add</button>
 </form>
-<p>Msg Erro</p>
+<p class="alert alert-danger" role="alert" *ngIf="hasError">
+  {{errorMessage}}
+</p>
