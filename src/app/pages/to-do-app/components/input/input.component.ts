@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'tdapp-input',
@@ -10,6 +10,8 @@ export class InputComponent {
   errorMessage =  '';
 
   taskDescription = '';
+
+  @Output() newTask = new EventEmitter<string>();
 
 
   handleAddClick(event:Event){
@@ -24,7 +26,9 @@ export class InputComponent {
       this.clearError()
     }
 
+    this.newTask.emit(this.taskDescription);
 
+    this.taskDescription = '';
   }
 
   setError(){

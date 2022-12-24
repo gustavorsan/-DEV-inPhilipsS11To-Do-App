@@ -8,4 +8,6 @@ import { Task } from '../../model/task.model';
 })
 export class ToDoListComponent {
   @Input() tasks:Task[] = [];
+
+
 }

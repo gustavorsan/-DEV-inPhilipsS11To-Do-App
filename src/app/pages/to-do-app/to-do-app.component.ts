@@ -8,4 +8,8 @@ import { Task } from './model/task.model';
 })
 export class ToDoAppComponent {
   tasks:Task[] =[new Task('teste1',false),new Task('teste2',true),new Task('teste3',false)]
+
+  addTask(description:string){
+    this.tasks.push(new Task(description,false));
+  }
 }
