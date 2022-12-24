@@ -8,4 +8,8 @@ import { Component, Input } from '@angular/core';
 export class TaskComponent {
   @Input() name = '';
   @Input() completed = false;
+
+  toggleCompletion(){
+    this.completed = !this.completed;
+  }
 }

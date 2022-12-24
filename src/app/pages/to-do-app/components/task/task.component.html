@@ -6,6 +6,7 @@ style="background-color: #f4f6f7;">
     alue="" 
     aria-label="..." 
     [checked]="completed" 
+    (change)="toggleCompletion()"
   />
   <span 
     [ngClass]="{'completed-task' : completed}"
