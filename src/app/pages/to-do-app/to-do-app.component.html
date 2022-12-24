@@ -9,7 +9,7 @@
               (newTask)="addTask($event)"
             ></tdapp-input>
             <div *ngIf="tasks.length > 0 else  msg">
-              <tdapp-nav></tdapp-nav>
+              <tdapp-nav (filterEvent)="filterItens($event)"></tdapp-nav>
               <tdapp-to-do-list [tasks]="tasks"></tdapp-to-do-list>
             </div>
             <ng-template #msg>

@@ -12,4 +12,21 @@ export class ToDoAppComponent {
   addTask(description:string){
     this.tasks.push(new Task(description,false));
   }
+
+  filterItens(filterType:'todos'|'ativos'|'completadas'){
+    
+    let  currentItens: Task[] = [];
+     //'todos'|'ativos'
+    switch(filterType){
+       case 'completadas': currentItens = this.tasks.filter(task => {return task.completed}) 
+             break;
+       case 'ativos': currentItens = this.tasks.filter(task => {return !task.completed}) 
+             break;
+       default: currentItens = this.tasks;
+         break
+    }
+ 
+ 
+    this.tasks = currentItens;
+   }
 }
